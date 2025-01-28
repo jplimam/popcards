@@ -30,9 +30,9 @@ passport.use(
         310000,
         16,
         "sha256",
-        (err, hashedPassword) => {
-          if (err) {
-            return callback(err);
+        (error, hashedPassword) => {
+          if (error) {
+            return callback(error);
           }
 
           const userPasswordBuffer = Buffer.from(user.password.buffer);
@@ -72,8 +72,8 @@ authRouter.post("/signup", async (req, res) => {
     310000,
     16,
     "sha256",
-    async (err, hashedPassword) => {
-      if (err) {
+    async (error, hashedPassword) => {
+      if (error) {
         return res.status(500).send({
           success: false,
           statusCode: 500,
