@@ -1,4 +1,5 @@
 import { Router } from "express";
+import authRouter from "./auth/auth.js";
 
 const routes = new Router();
 
@@ -9,5 +10,7 @@ routes.get("/", (req, res) => {
     body: "Welcome to Popcard!",
   });
 });
+
+routes.use("/auth", authRouter);
 
 export default routes;
