@@ -1,6 +1,7 @@
 import { Router } from "express";
 import authRouter from "./auth/auth.js";
 import usersRouter from "./routes/users.js";
+import popcardsRouter from "./routes/popcards.js";
 
 const routes = new Router();
 
@@ -14,5 +15,6 @@ routes.get("/", (req, res) => {
 
 routes.use("/auth", authRouter);
 routes.use("/users", usersRouter);
+routes.use("/popcards", popcardsRouter);
 
 export default routes;
